@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right, orange, red);
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome, idade, profissao;
+
+        nome = window.prompt('Qual é o seu nome?')
+        idade = window.prompt('Qual é a sua idade?')
+        profissao = window.prompt('Qual é a sua profissao?')
+
+        document.write(`${nome} tem ${idade} anos e sua profissão é ${profissao}<br/><br/>`)
+        document.write(`${nome}, seu nome tem ${nome.length} letras<br/>`)
+        document.write(`Seu nome em maiúsculo é: ${nome.toUpperCase()}<br/>`)
+        document.write(`Seu nome em minúsculo é: ${nome.toLowerCase()}<br/>`)
+    </script>
+</body>
+</html>

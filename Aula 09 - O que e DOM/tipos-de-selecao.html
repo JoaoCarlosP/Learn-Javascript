@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passo com DOM</title>
+    <style>
+        body{
+            background-color: rgb(168, 168, 168);
+            color: white;
+            font: normal 16pt times;
+        }
+        main {
+            background-color: rgb(67, 105, 155);
+            width: 830px;
+            margin: auto;
+            padding: 15px;
+            border: 2px solid rgb(48, 47, 47);
+        }
+        h3{
+            text-align: center;
+        }
+        p{
+            padding: 2px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Inicio estudos com DOM</h1>
+        <p>Aqui vai o resultado</p>
+        <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+        <div>Há várias formas de acessar elementos do DOM para fazer alterações.</div>
+        <hr>
+        <p>Acessando a arvore DOM até agora do site temos: 'window. ==> document. ==> body. ==> p'</p>
+        <p>Porém, neste caso, acessariamos todas as tags 'p' dentro de body. Para evitarmos isso, temos os seletores feitos das seguintes maneiras:</p>
+        <ul>
+            <li>Por Marca</li>
+            <li>Por Id</li>
+            <li>Por Class</li>
+            <li>Por Seletor</li>
+        </ul>
+        <hr>
+        <h3>Selecionando elementos por Marca (tagName)</h3>
+        <p> Alternado este texto através do seletor por marca com o comando: </p>
+        <p>window.document.getElementsByTagName('p')[4].style.color = 'blue'</p>
+        <p>Como são vários p's dentro do documento html, é necessário dizer entre [] qual o número do p que você quer selecionar</p>
+        <hr>
+        <h3>Selecionando elementos por Id</h3>
+        <p id="exemplo-id">Alternado este texto através do seletor por ID</p>
+        <p> forma diferente de fazer a alteração é jogar o dado em uma variável e alterar a variavel</p>
+        <br>
+        <p>var seletor_id = window.document.getElementById('exemplo-id')</p>
+        <p>seletor_id.style.color = 'yellow'</p>
+        <p>seletor_id.style.border = '1px solid black' </p>
+        <hr>
+        <h3>Selecionando elementos por Class</h3>
+        <p class="exemplo-class">Alternado esse texto com a mesma class de outros textos através do seletor por Class</p>
+        <p class="exemplo-class">Texto com a mesma class do anterior</p>
+        <p>Assim como a por Marca, neste caso também é necessário dizer qual Class deve ser acessada</p>
+        <p>Omitir o <em>window</em> também funciona</p>
+        <p>var seletor_class = document.getElementsByClassName('exemplo-class')[0]</p>
+        <p>seletor_class.style.fontSize = '16px'</p>
+        <p> seletor_class.style.border = '1px solid black'</p>
+        <hr>
+        <h3>Selecionando elementos por Seletor</h3>
+        <p class="seletor">Alternado esse texto por seletor</p>
+        <p>Esta propriedade usa os seletores do CSS para acessar as propriedades (como '#' ou ' . ' para class ou Id)</p>
+        <p>var seletor = document.querySelector('.seletor')</p>
+        <p>seletor.style.border = '1px solid black'</p>
+    </main>
+    <script>
+        /*-----------------SELECIONANDO POR MARCA ---------------*/
+        window.document.getElementsByTagName('p')[4].style.color = 'black'
+        window.document.getElementsByTagName('p')[4].style.border = '1px solid black'
+        //por ter varias tags, é necessário colocar o número da qual deve ser alterada
+        
+        /*-----------------SELECIONANDO POR ID ---------------*/
+        var seletor_id = document.getElementById('exemplo-id')
+        seletor_id.style.color = 'yellow'
+        seletor_id.style.border = '1px solid black'
+        //uma forma diferente de fazer a alteração é jogar o dado em uma variável e alterar a variavel
+
+        /*-----------------SELECIONANDO POR CLASS ---------------*/
+        var seletor_class = window.document.getElementsByClassName('exemplo-class')[0]
+        seletor_class.style.fontSize = '16px'
+        seletor_class.style.border = '1px solid black'
+
+        /*-----------------SELECIONANDO POR SELETOR ---------------*/
+        var seletor = document.querySelector('.seletor')
+        seletor.style.border = '1px solid black'
+        
+    </script>
+</body>
+</html>
